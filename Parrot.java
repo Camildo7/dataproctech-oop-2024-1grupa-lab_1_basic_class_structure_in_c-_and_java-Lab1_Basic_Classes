@@ -2,8 +2,8 @@ public class Parrot {
     private String phrase;
 
     // Constructor
-    public Parrot() {
-        this.phrase = "Hello!";
+    public Parrot(String initPhrase) {
+        this.phrase = initPhrase;
     }
 
     // Method
@@ -12,7 +12,7 @@ public class Parrot {
     }
 
     public static void main(String[] args) {
-        Parrot p = new Parrot();
+        Parrot p = new Parrot("Good morning!");
         p.say();
     }
 }
