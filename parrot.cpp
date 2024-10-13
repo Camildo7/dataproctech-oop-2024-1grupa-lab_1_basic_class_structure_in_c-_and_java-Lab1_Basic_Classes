@@ -13,8 +13,10 @@ public:
     }
 
     // Method
-    void say(){
-        cout << phrase << endl;
+    void say(int times){
+        for (int i = 0; i<times; ++i){
+            cout << phrase << endl;
+        }
     }
 
     void setPhrase(string new_phrase){
@@ -24,9 +26,9 @@ public:
 
 int main(){
     Parrot p("Hello!");
-    p.say();
+    p.say(1);
 
     p.setPhrase("Good morning");
-    p.say();
+    p.say(2);
     return 0;
 }
