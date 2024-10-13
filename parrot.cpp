@@ -1,34 +1,41 @@
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 class Parrot {
 private:
-    string phrase;
+    vector<string> phrases;
 
 public:
     // Constructor
     Parrot(string init_phrase){
-        phrase = init_phrase;
+        phrases.push_back(init_phrase);
+        srand(time(0));
     }
+
+    void addPhrase(string new_phrase) {
+        phrases.push_back(new_phrase);
+    }
+
 
     // Method
-    void say(int times){
-        for (int i = 0; i<times; ++i){
-            cout << phrase << endl;
+    void say() {
+        if (!phrases.empty()) {
+            int randomIndex = rand() % phrases.size();
+            cout << phrases[randomIndex] << endl;
         }
-    }
-
-    void setPhrase(string new_phrase){
-        phrase = new_phrase;
     }
 };
 
 int main(){
     Parrot p("Hello!");
-    p.say(1);
+    p.addPhrase("Good morning");
+    p.addPhrase("How are you?");
 
-    p.setPhrase("Good morning");
-    p.say(2);
+    p.say();
+
     return 0;
 }
