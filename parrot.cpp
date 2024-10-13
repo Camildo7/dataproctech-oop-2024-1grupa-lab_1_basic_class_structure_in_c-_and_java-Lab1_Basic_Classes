@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -9,8 +8,8 @@ private:
 
 public:
     // Constructor
-    Parrot(){
-        phrase = "Hello";
+    Parrot(string init_phrase){
+        phrase = init_phrase;
     }
 
     // Method
@@ -20,7 +19,7 @@ public:
 };
 
 int main(){
-    Parrot p;
+    Parrot p("Hello!");
     p.say();
     return 0;
 }
