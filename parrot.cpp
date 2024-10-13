@@ -16,10 +16,17 @@ public:
     void say(){
         cout << phrase << endl;
     }
+
+    void setPhrase(string new_phrase){
+        phrase = new_phrase;
+    }
 };
 
 int main(){
     Parrot p("Hello!");
+    p.say();
+
+    p.setPhrase("Good morning");
     p.say();
     return 0;
 }
